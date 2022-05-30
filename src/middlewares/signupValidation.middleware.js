@@ -1,6 +1,6 @@
 import {
   validateBirthday,
-  validateContact,
+  validateContact, validateDetailAddress,
   validateEmail,
   validateGender,
   validatePassword,
@@ -9,7 +9,13 @@ import {
 import {ErrorMessage, makeErrorResponse} from "../response/errorResponse.js";
 
 const validateSingUpData = (req, res, next) => {
-  const {email, password, gender, birthDay, contact, terms} = req.body;
+  const {email, password, gender, name, birthDay, contact, terms,
+    fullAddress: {
+      address,
+      detailAddress,
+      zoneCode,
+  }} = req.body;
+  console.log(address, detailAddress, zoneCode);
 
   res.status(400);
   if (!validateEmail(email)) {
@@ -26,6 +32,9 @@ const validateSingUpData = (req, res, next) => {
   }
   if (!validateContact(contact)) {
     return res.json(makeErrorResponse(ErrorMessage.INVALID_CONTACT));
+  }
+  if(!validateDetailAddress(address, zoneCode)) {
+    return res.json(makeErrorResponse(ErrorMessage.INVALID_ZONE_CODE));
   }
   if (!validateTerms(terms)) {
     return res.json(makeErrorResponse(ErrorMessage.DISAGREE_TO_TERMS));

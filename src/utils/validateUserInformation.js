@@ -2,6 +2,7 @@ const emailRegularExpression = /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.
 const passwordRegularExpression =  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%^*#?&])[A-Za-z\d$@$!%^*#?&]{8,}$/;
 const contactRegularExpression = /^\d{8}$|^\d{11}$/;
 const birthDayRegularExpression = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/;
+const zoneCodeRegularExpression = /^\d{5}/;
 
 export const validateEmail = (email) => {
   return emailRegularExpression.test(email);
@@ -27,4 +28,16 @@ export const validateTerms = (terms) => {
 
 export const validateBirthday = (birthDay) => {
   return birthDayRegularExpression.test(birthDay);
+}
+
+export const validateDetailAddress = (address, zoneCode) => {
+  return validateAddress(address) && validateZoneCode(zoneCode);
+}
+
+const validateAddress = (address) => {
+  return address.length >= 1;
+}
+
+const validateZoneCode = (zoneCode) => {
+  return zoneCodeRegularExpression.test(zoneCode);
 }
