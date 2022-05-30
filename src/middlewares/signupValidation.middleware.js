@@ -1,4 +1,5 @@
 import {
+  validateBirthday,
   validateContact,
   validateEmail,
   validateGender,
@@ -8,7 +9,7 @@ import {
 import {ErrorMessage, makeErrorResponse} from "../response/errorResponse.js";
 
 const validateSingUpData = (req, res, next) => {
-  const {email, password, gender, contact, terms} = req.body;
+  const {email, password, gender, birthDay, contact, terms} = req.body;
 
   res.status(400);
   if (!validateEmail(email)) {
@@ -19,6 +20,9 @@ const validateSingUpData = (req, res, next) => {
   }
   if (!validateGender(gender)) {
     return res.json(makeErrorResponse(ErrorMessage.INVALID_GENDER));
+  }
+  if (!validateBirthday(birthDay)) {
+    return res.json(makeErrorResponse(ErrorMessage.INVALID_BIRTHDAY));
   }
   if (!validateContact(contact)) {
     return res.json(makeErrorResponse(ErrorMessage.INVALID_CONTACT));
