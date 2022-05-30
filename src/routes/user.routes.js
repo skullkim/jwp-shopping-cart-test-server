@@ -1,12 +1,15 @@
-import express from 'express';
-
-import validateSingUpData from "../middlewares/signupValidation.middleware.js";
+import express from "express";
+import validateSignIn from "../middlewares/signinValidation.middleware.js";
 
 const router = express.Router();
 
-router.post('/', validateSingUpData, (req, res) => {
-  res.setHeader('location', '/api/users/1');
-  res.status(201).end();
+router.post('/authentication/sign-in', validateSignIn, (req, res) => {
+  const response = {
+    accessToken: 'string',
+    userId: 1
+  };
+
+  res.status(200).json(response);
 });
 
 export default router;
