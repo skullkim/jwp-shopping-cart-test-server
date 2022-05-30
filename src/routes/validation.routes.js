@@ -8,9 +8,11 @@ router.get('/', validateEmailAddress, (req, res) => {
   const response = {
     isDuplicated: false,
   };
+
   if (email === 'duplicatedEmail@example.com') {
     response.isDuplicated = true;
   }
+
   return res.status(200).json(response);
 });
 

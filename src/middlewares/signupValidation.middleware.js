@@ -5,26 +5,28 @@ import {
   validatePassword,
   validateTerms
 } from "../utils/validateUserInformation.js";
-import makeErrorResponse from "../response/errorResponse.js";
+import {ErrorMessage, makeErrorResponse} from "../response/errorResponse.js";
 
 const validateSingUpData = (req, res, next) => {
   const {email, password, gender, contact, terms} = req.body;
+
   res.status(400);
   if (!validateEmail(email)) {
-    return res.json(makeErrorResponse('유효하지 않은 이메일입니다.'));
+    return res.json(makeErrorResponse(ErrorMessage.INVALID_EMAIL));
   }
   if (!validatePassword(password)) {
-    return res.json(makeErrorResponse('유효하지 않은 비밀번호입니다.'));
+    return res.json(makeErrorResponse(ErrorMessage.INVALID_PASSWORD));
   }
   if (!validateGender(gender)) {
-    return res.json(makeErrorResponse('유효하지 않은 성별입니다.'));
+    return res.json(makeErrorResponse(ErrorMessage.INVALID_GENDER));
   }
   if (!validateContact(contact)) {
-    return res.json(makeErrorResponse('유효하지 않은 연락처입니다.'));
+    return res.json(makeErrorResponse(ErrorMessage.INVALID_CONTACT));
   }
   if (!validateTerms(terms)) {
-    return res.json(makeErrorResponse('약관에 동의하지 않았습니다.'));
+    return res.json(makeErrorResponse(ErrorMessage.DISAGREE_TO_TERMS));
   }
+
   next();
 }
 
