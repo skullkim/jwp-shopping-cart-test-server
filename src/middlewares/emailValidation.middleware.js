@@ -1,4 +1,4 @@
-import {validateEmail} from "../utils/validateUserInformation.js";
+import {validateEmail} from "../utils/validateCustomerInformation.js";
 import {ErrorMessage, makeErrorResponse} from "../response/errorResponse.js";
 
 const validateEmailAddress = (req, res, next) => {

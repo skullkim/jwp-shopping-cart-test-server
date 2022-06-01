@@ -5,7 +5,7 @@ import {
   validateGender,
   validatePassword,
   validateTerms
-} from "../utils/validateUserInformation.js";
+} from "../utils/validateCustomerInformation.js";
 import {ErrorMessage, makeErrorResponse} from "../response/errorResponse.js";
 
 const validateSingUpData = (req, res, next) => {

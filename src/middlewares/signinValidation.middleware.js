@@ -1,4 +1,4 @@
-import {validateEmail, validatePassword} from "../utils/validateUserInformation.js";
+import {validateEmail, validatePassword} from "../utils/validateCustomerInformation.js";
 import {ErrorMessage, makeErrorResponse} from "../response/errorResponse.js";
 
 const validateSignIn = (req, res, next) => {
