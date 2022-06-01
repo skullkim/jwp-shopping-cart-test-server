@@ -9,7 +9,7 @@ import {
 import {ErrorMessage, makeErrorResponse} from "../response/errorResponse.js";
 
 const validateSingUpData = (req, res, next) => {
-  const {email, password, gender, name, birthDay, contact, terms,
+  const {email, password, gender, name, birthday: birthday, contact, terms,
     fullAddress: {
       address,
       detailAddress,
@@ -27,7 +27,7 @@ const validateSingUpData = (req, res, next) => {
   if (!validateGender(gender)) {
     return res.json(makeErrorResponse(ErrorMessage.INVALID_GENDER));
   }
-  if (!validateBirthday(birthDay)) {
+  if (!validateBirthday(birthday)) {
     return res.json(makeErrorResponse(ErrorMessage.INVALID_BIRTHDAY));
   }
   if (!validateContact(contact)) {

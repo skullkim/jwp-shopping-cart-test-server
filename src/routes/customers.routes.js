@@ -17,7 +17,7 @@ router.get('/:customerId', validateToken, (req, res, next) => {
     profileImage : 'http://gravatar.com/avatar/1?d=identicon',
     name : 'string',
     gender : 'male',
-    birthDay : '1999-03-28',
+    birthday : '1999-03-28',
     contact : '12345678910',
     fullAddress : {
       address: 'address',

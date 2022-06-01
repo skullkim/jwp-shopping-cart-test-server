@@ -7,7 +7,7 @@ export const ErrorMessage = {
   DISAGREE_TO_TERMS: '약관에 동의하지 않았습니다.',
   INVALID_TOKEN: '유효하지 않은 토큰입니다.',
   TOKEN_EXPIRED: '토큰이 만료되었습니다.',
-  INVALID_BIRTHDAY: '유효자지 않은 생일 형식입니다.',
+  INVALID_BIRTHDAY: '유효하지 않은 생일 형식입니다.',
   EMPTY_ADDRESS: '주소가 입력되지 않았습니다',
   INVALID_ZONE_CODE: '유효하지 않은 우편번호입니다.',
 };
