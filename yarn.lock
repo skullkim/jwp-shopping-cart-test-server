@@ -1224,6 +1224,11 @@ minimist@^1.2.0:
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
+mjs@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mjs/-/mjs-1.0.0.tgz#b9919ca1487b1f0e8417bcdb052ba261ceb63660"
+  integrity sha512-rh75GZMBiS7w4k7uKdDkSsAP0YgXvVsBBtlwO1pn/lh/PtojHlJla458cHszAEXIGG/qhHZAk7akK3gLyEsk6Q==
+
 mkdirp@1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
