@@ -23,7 +23,7 @@ export const validateContact = (contact) => {
 }
 
 export const validateTerms = (terms) => {
-  return terms === 'true';
+  return terms;
 }
 
 export const validateBirthday = (birthDay) => {
